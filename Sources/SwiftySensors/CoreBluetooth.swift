@@ -6,6 +6,7 @@
 //
 //  Copyright © 2017 Kinetic. All rights reserved.
 //
+// Modified to fix issues with CoreBluetooth changes in iOS 15
 
 import CoreBluetooth
 
@@ -17,12 +18,12 @@ extension CBCharacteristic {
      - parameter enabled: Notification Flag
      */
     public func notify(_ enabled: Bool) {
-        service.peripheral.setNotifyValue(enabled, for: self)
+        service?.peripheral?.setNotifyValue(enabled, for: self)
     }
     
     /// Read the value of the Characteristic
     public func read() {
-        service.peripheral.readValue(for: self)
+        service?.peripheral?.readValue(for: self)
     }
     
     /**
@@ -34,8 +35,8 @@ extension CBCharacteristic {
      - returns: true if write performed
      */
     @discardableResult public func write(_ data: Data, writeType: CBCharacteristicWriteType) -> Bool {
-        if service.peripheral.state == .connected {
-            service.peripheral.writeValue(data, for: self, type: writeType)
+        if service?.peripheral?.state == .connected {
+            service?.peripheral?.writeValue(data, for: self, type: writeType)
             return true
         }
         return false

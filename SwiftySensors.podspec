@@ -1,10 +1,11 @@
+# Forked from https://github.com/codeinversion/sensors-swift
 Pod::Spec.new do |spec|
 
     spec.name                   = 'SwiftySensors'
-    spec.version                = '1.1.0'
+    spec.version                = '1.2.0'
     spec.summary                = 'BLE Fitness Sensors Communication Utilities for iOS, macOS and tvOS'
 
-    spec.homepage               = 'https://github.com/kinetic-fit/sensors-swift'
+    spec.homepage               = 'https://github.com/rkunboxed/sensors-swift'
     spec.license                = { :type => 'MIT', :file => 'LICENSE' }    
     spec.author                 = { 'Kinetic' => 'admin@kinetic.fit' }
     
@@ -12,7 +13,7 @@ Pod::Spec.new do |spec|
     spec.osx.deployment_target  = '10.13'
     spec.tvos.deployment_target = '11.2'
 
-    spec.source                 = { :git => 'https://github.com/kinetic-fit/sensors-swift.git',
+    spec.source                 = { :git => 'https://github.com/rkunboxed/sensors-swift',
                                     :tag => spec.version.to_s,
                                     :submodules => true }
     spec.source_files           = 'Sources/**/*.swift'
