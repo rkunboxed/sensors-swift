@@ -219,13 +219,13 @@ open class CyclingPowerSerializer {
         }
         
         // These two arrays are mutually exclusive
-        if flags.contains(.InstantaneousForcesPresent) {
+        // if flags.contains(.InstantaneousForcesPresent) {
             
-        } else if flags.contains(.InstantaneousTorquesPresent) {
-            let torqueRaw = Int16(bytes[index++=]) | Int16(bytes[index++=]) << 8
-            let torque = Double(torqueRaw) / 32.0
-            print(torque)
-        }
+        // } else if flags.contains(.InstantaneousTorquesPresent) {
+        //     let torqueRaw = Int16(bytes[index++=]) | Int16(bytes[index++=]) << 8
+        //     let torque = Double(torqueRaw) / 32.0
+        //     print(torque)
+        // }
         
         return vector
     }
